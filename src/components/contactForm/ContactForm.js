@@ -10,6 +10,24 @@ export const ContactForm = ({
   handleSubmit
 }) => {
   return (
-    ContactForm
+    <form
+      onSubmit={props.handleSubmit}  
+    >
+      ContactForm
+      <input
+        value={props.name}
+        placeholder={'name'}
+      />
+      <input
+        value={props.phone}
+        placeholder={'phone number'}
+        pattern={/((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}/}
+      />
+      <input
+        value={props.email}
+        placeholder={'email'}
+      />
+      <button>Submit</button>
+    </form>
   );
 };
